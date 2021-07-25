@@ -19,7 +19,7 @@
         @endif
 
         <div class="flex justify-center pt-20">
-            <form action="/cars/{{ $car->id }}" onsubmit="return handleData()" method="POST">
+            <form id="form" action="/cars/{{ $car->id }}" onsubmit="return handleData()" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="block">

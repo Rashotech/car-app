@@ -19,7 +19,7 @@
         @endif
 
         <div class="flex justify-center pt-20">
-            <form action="/cars" onsubmit="return handleData()" method="POST" enctype="multipart/form-data">
+            <form id="form" onsubmit="return handleData()" action="/cars" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="block">
                     <input type="file"
@@ -46,7 +46,7 @@
                            required
                     >
                     <p>Car Products</p>
-                    <div class="py-1" style="visibility: hidden; color:red;" id="option_error">
+                    <div class="py-2" style="visibility: hidden; color:red;" id="option_error">
                         Please select at least an option
                     </div>
                     @foreach ($cars_types as $cars_type)
