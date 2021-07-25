@@ -27,7 +27,7 @@ class CarModel extends FormRequest
             'name' => 'bail|required|string|unique:car_models,model_name',
             'date' => 'required',
             'engine' => 'required',
-            'image_path' => 'required|mimes:jpg,png,jpeg|max:5048'
+            'image_path' => 'required|mimes:jpg,png,jpeg,webp|max:5048'
         ];
     }
 }

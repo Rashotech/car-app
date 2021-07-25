@@ -105,7 +105,7 @@ class CarsController extends Controller
             'name' => 'required',
             'founded' => 'required|integer|min:0|max:2021',
             'description' => 'required',
-            'image' => 'required|mimes:jpg,png,jpeg|max:5048'
+            'image' => 'required|mimes:jpg,png,jpeg,webp|max:5048'
         ]);
 
         $newImageName = time() . '-' . $request->name . '.' . $request->image->extension();
