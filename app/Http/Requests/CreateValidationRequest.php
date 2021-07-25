@@ -25,10 +25,9 @@ class CreateValidationRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:cars',
+            'name' => 'required',
             'founded' => 'required|integer|min:0|max:2021',
-            'description' => 'required',
-            'image' => 'required|mimes:jpg,png,jpeg|max:5048'
+            'description' => 'required'
         ];
     }
 }
