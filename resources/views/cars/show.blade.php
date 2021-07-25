@@ -15,7 +15,7 @@
                 </span>
 
                 <img 
-                    src="{{ asset('images/' . $car->image_path) }}" 
+                    src="{{ $car->image_path }}" 
                     alt=""
                     class="w-6/12 mt-4 mb-2 shadow-xl"    
                 >
@@ -49,7 +49,7 @@
                             {{ $car->name }} Models
                         </h1>
                     </div>
-                    <table class="table-auto">
+                    <table class="table-auto text-center">
                         <tr class="bg-blue-100">
                             <th class="w-1/4 border-4 border-gray-500">
                                 Image
@@ -68,7 +68,7 @@
                             <tr>
                                 <td class="border-4 border-gray-500">
                                     <img 
-                                        src="{{ asset('images/' . $model->image_path) }}" 
+                                        src="{{ $model->image_path }}" 
                                         alt=""
                                         class="w-12/12 mt-2 mb-2 shadow-xl"    
                                     >
@@ -95,8 +95,9 @@
                             <p>No car Models Found</p>
                         @endforelse
                     </table>
+                    @else
+                        <p>No car Models Found</p>
                 @endif
-                
                 <hr class="mt-4 mb-6">
             </div>
         </div>

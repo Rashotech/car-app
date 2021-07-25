@@ -46,8 +46,7 @@
                         rows="5" 
                         placeholder="Description..."
                         required
-                    >
-                    </textarea>
+                    ></textarea>
                     <p>Car Products</p>
                     <div class="py-2" style="visibility: hidden; color:red;" id="option_error">
                         Please select at least an option

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="m-auto w-4/5 py-24">
+    <div class="m-auto w-4/5 py-12">
         <div class="text-center">
             <h1 class="text-5xl uppercase bold">
                 Cars
@@ -21,6 +21,7 @@
         @endif
 
         <div class="w-5/6 py-10">
+        @if(count($cars) !== 0)
            @foreach ($cars as $car)
                 <div class="m-auto">
                     @if (isset(Auth::user()->id) && Auth::user()->id == $car->user_id)
@@ -44,7 +45,7 @@
                     @endif
 
                     <img 
-                        src="{{ asset('images/'. $car->image_path) }}"
+                        src="{{ $car->image_path }}"
                         class="w-40 mb-8 shadow-xl"
                     >
 
@@ -65,6 +66,13 @@
                     <hr class="mt-4 mb-6">
                 </div>
            @endforeach
+           @else 
+            <div class="text-center">
+                <h1 class="text-5xl uppercase bold py-50">
+                    No Car Found
+                </h1>
+            </div>
+           @endif
         </div>
         {{ $cars->links() }}
     </div>
