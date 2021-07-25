@@ -70,13 +70,15 @@ class CarsController extends Controller
 
         $car = Car::find($id);
 
-        $newImageName = time() . '-' . $request->name . '.' . $request->image_path->extension();
+        // $newImageName = time() . '-' . $request->name . '.' . $request->image_path->extension();
         
-        $request->image_path->move(public_path('images'), $newImageName);
+        // $request->image_path->move(public_path('images'), $newImageName);
+
+        $uploadedFileUrl = cloudinary()->upload($request->image->getRealPath())->getSecurePath();
 
         $car->carModels()->create([
             'model_name' => $request->input('name'),
-            'image_path' => $newImageName
+            'image_path' => $uploadedFileUrl
         ]);
 
         $model = $car->carModels()->where('model_name', $request->input('name'))->first();
@@ -108,15 +110,13 @@ class CarsController extends Controller
             'image' => 'required|mimes:jpg,png,jpeg,webp|max:5048'
         ]);
 
-        $newImageName = time() . '-' . $request->name . '.' . $request->image->extension();
+        $uploadedFileUrl = cloudinary()->upload($request->image->getRealPath())->getSecurePath();
         
-        $request->image->move(public_path('images'), $newImageName);
-
         $car = Car::Create([
             'name' => $request->input('name'),
             'founded' => $request->input('founded'),
             'description' => $request->input('description'),
-            'image_path' => $newImageName,
+            'image_path' => $uploadedFileUrl,
             'user_id' => auth()->user()->id
         ]);
 
