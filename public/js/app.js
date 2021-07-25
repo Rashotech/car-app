@@ -19471,8 +19471,8 @@ process.umask = function() { return 0; };
 ;
 
 function handleData() {
-  const form_data = new FormData(document.querySelector("form"));
-
+  var form_data = new FormData(document.querySelector("#form"));
+  console.log(form_data)
   if(!form_data.has("car_products[]")) {
     document.getElementById("option_error").style.visibility = "visible";
     return false;
