@@ -36,15 +36,18 @@
                     <input type="text"
                            class="block shadow-5xl mb-10 p-2 w-80 italic placeholder-gray-400"
                            name="founded"
-                           placeholder="Founded..."
+                           placeholder="Year Founded..."
                            required
                     >
-                    <input type="text"
-                           class="block shadow-5xl mb-10 p-2 w-80 italic placeholder-gray-400"
-                           name="description"
-                           placeholder="Description..."
-                           required
+                    <textarea 
+                        name="description" 
+                        class="block shadow-5xl mb-10 p-2 w-80 italic placeholder-gray-400" 
+                        cols="30" 
+                        rows="5" 
+                        placeholder="Description..."
+                        required
                     >
+                    </textarea>
                     <p>Car Products</p>
                     <div class="py-2" style="visibility: hidden; color:red;" id="option_error">
                         Please select at least an option

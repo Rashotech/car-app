@@ -35,12 +35,15 @@
                            value="{{ $car->founded }}"
                            required
                     >
-                    <input type="text"
-                           class="block shadow-5xl mb-10 p-2 w-80 italic placeholder-gray-400"
-                           name="description"
-                           value="{{ $car->description }}"
-                           required
+                    <textarea 
+                        name="description" 
+                        class="block shadow-5xl mb-10 p-2 w-80" 
+                        cols="30" 
+                        rows="5" 
+                        required
                     >
+                        {{ $car->description }}
+                    </textarea>
                     <p>Car Products</p>
                     <div class="py-1" style="visibility: hidden; color:red;" id="option_error">
                         Please select at least an option
